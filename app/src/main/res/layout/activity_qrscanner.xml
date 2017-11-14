@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <include layout="@layout/toolbar_translucent" />
+   <FrameLayout
+      android:id="@+id/content_frame"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+   <android.support.design.widget.FloatingActionButton
+       android:id="@+id/scan_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:backgroundTint="@color/red"
+       app:fabSize="normal"
+       android:src="@drawable/ic_menu_camera"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="12dp"/>
+
+   <android.support.design.widget.FloatingActionButton
+       android:id="@+id/settings_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:backgroundTint="@color/transparent"
+       android:layout_toRightOf="@id/scan_button"
+       android:layout_alignParentBottom="true"
+       android:src="@mipmap/ic_action_start"
+       android:layout_marginLeft="8dp"
+       android:layout_marginBottom="12dp"/>
+
+   <android.support.design.widget.FloatingActionButton
+       android:id="@+id/time_button"
+       app:borderWidth="1dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:backgroundTint="@color/transparent"
+       android:layout_toLeftOf="@id/scan_button"
+       android:layout_alignParentBottom="true"
+       android:src="@mipmap/ic_action_start"
+       android:background="@drawable/fab_transparent_bg"
+       android:layout_marginRight="8dp"
+       android:layout_marginBottom="12dp"/>
+</RelativeLayout>
