@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -30,6 +31,12 @@ public class QRScannerActivity extends AppCompatActivity implements ZXingScanner
    public void onCreate(Bundle state) {
       super.onCreate(state);
       setContentView(R.layout.activity_qrscanner);
+      Toolbar bar = (Toolbar) findViewById(R.id.toolbar);
+      setSupportActionBar(bar);
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_camera_back);
+      setTitle("");
+
       if(!Utils.checkForPermission(this, Manifest.permission.CAMERA)) {
          Utils.requestPermission(this,Manifest.permission.CAMERA);
       }

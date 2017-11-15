@@ -1,7 +1,11 @@
 package mx.gob.profeco.pisac;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +29,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -33,7 +39,7 @@ import mx.gob.profeco.pisac.login.LoginActivity;
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
-    private final static String TAG = "MapsActivity";
+   private final static String TAG = "MapsActivity";
    private GoogleMap mMap;
 
 
@@ -65,8 +71,43 @@ public class MapsActivity extends AppCompatActivity
 
       // Add a marker in Sydney and move the camera
       LatLng cdmx = new LatLng(19.4315079, -99.1339532);
-      mMap.addMarker(new MarkerOptions().position(cdmx).title("Ciudad de México"));
-      mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cdmx,15));
+      //mMap.addMarker(new MarkerOptions().position(cdmx).title("Ciudad de México"));
+      mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cdmx, 15));
+      //TODO:
+      //if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+         mMap.setMyLocationEnabled(true);
+         mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+               mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(),location.getLongitude()), 15));
+               mMap.setOnMyLocationChangeListener(null);
+
+               BitmapDescriptor markerOk = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_ok);
+               BitmapDescriptor markerErr = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_err);
+               mMap.addMarker(new MarkerOptions().icon(markerOk).draggable(false).position(new LatLng(location.getLatitude()-0.003, location.getLongitude()+ 0.003)));
+               mMap.addMarker(new MarkerOptions().icon(markerOk).draggable(false).position(new LatLng(location.getLatitude()+0.003, location.getLongitude()+ 0.003)));
+               mMap.addMarker(new MarkerOptions().icon(markerOk).draggable(false).position(new LatLng(location.getLatitude()-0.003, location.getLongitude()- 0.003)));
+               mMap.addMarker(new MarkerOptions().icon(markerErr).draggable(false).position(new LatLng(location.getLatitude()+0.002, location.getLongitude()+ 0.001)));
+               mMap.addMarker(new MarkerOptions().icon(markerErr).draggable(false).position(new LatLng(location.getLatitude()+0.004, location.getLongitude()+ 0.001)));
+               mMap.addMarker(new MarkerOptions().icon(markerErr).draggable(false).position(new LatLng(location.getLatitude()-0.002, location.getLongitude()- 0.004)));
+            }
+         });
+      //}
+   }
+
+   @Override
+   public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+      //TODO:
+      /*if (requestCode == MY_LOCATION_REQUEST_CODE) {
+         if (permissions.length == 1 &&
+                 permissions[0] == Manifest.permission.ACCESS_FINE_LOCATION &&
+                 grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+         } else {
+            // Permission was denied. Display an error message.
+         }
+      }
+      */
    }
 
    @Override
@@ -82,8 +123,8 @@ public class MapsActivity extends AppCompatActivity
    @Override
    public boolean onCreateOptionsMenu(Menu menu) {
       // Inflate the menu; this adds items to the action bar if it is present.
-      getMenuInflater().inflate(R.menu.main, menu);
-      return true;
+      //getMenuInflater().inflate(R.menu.main, menu);
+      return false;
    }
 
    @Override

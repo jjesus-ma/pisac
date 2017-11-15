@@ -16,32 +16,34 @@
        android:layout_height="wrap_content"
        app:backgroundTint="@color/red"
        app:fabSize="normal"
-       android:src="@drawable/ic_menu_camera"
+       android:src="@mipmap/ic_qr_scan"
        android:layout_centerHorizontal="true"
        android:layout_alignParentBottom="true"
        android:layout_marginBottom="12dp"/>
 
-   <android.support.design.widget.FloatingActionButton
-       android:id="@+id/settings_button"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:backgroundTint="@color/transparent"
-       android:layout_toRightOf="@id/scan_button"
-       android:layout_alignParentBottom="true"
-       android:src="@mipmap/ic_action_start"
-       android:layout_marginLeft="8dp"
-       android:layout_marginBottom="12dp"/>
+   <ImageButton
+      android:id="@+id/settings_button"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:elevation="8dp"
+      android:scaleType="fitXY"
+      android:background="@color/transparent"
+      android:layout_toRightOf="@id/scan_button"
+      android:layout_alignParentBottom="true"
+      android:src="@drawable/ic_camera_settings"
+      android:layout_marginLeft="8dp"
+      android:layout_marginBottom="12dp"/>
 
-   <android.support.design.widget.FloatingActionButton
-       android:id="@+id/time_button"
-       app:borderWidth="1dp"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:backgroundTint="@color/transparent"
-       android:layout_toLeftOf="@id/scan_button"
-       android:layout_alignParentBottom="true"
-       android:src="@mipmap/ic_action_start"
-       android:background="@drawable/fab_transparent_bg"
-       android:layout_marginRight="8dp"
-       android:layout_marginBottom="12dp"/>
+   <ImageButton
+      android:id="@+id/time_button"
+      android:scaleType="fitXY"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:elevation="8dp"
+      android:background="@color/transparent"
+      android:layout_toLeftOf="@id/scan_button"
+      android:layout_alignParentBottom="true"
+      android:src="@drawable/ic_camera_timer"
+      android:layout_marginRight="8dp"
+      android:layout_marginBottom="12dp"/>
 </RelativeLayout>

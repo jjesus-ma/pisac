@@ -7,8 +7,7 @@
    android:layout_height="match_parent"
     android:orientation="vertical"
    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-   tools:context="mx.gob.profeco.pisac.MapsActivity"
-   tools:showIn="@layout/app_bar_main">
+   tools:context="mx.gob.profeco.pisac.MapsActivity">
 
    <fragment android:id="@+id/map"
              android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -16,16 +15,24 @@
              android:layout_height="0dp"
                android:layout_weight="9"/>
 
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorPrimary"
+      android:gravity="center">
    <TextView
-       android:layout_width="match_parent"
+      android:drawableStart="@mipmap/ic_icon_check_in"
+       android:layout_width="wrap_content"
        android:layout_height="50dp"
-       android:text="Check in"
-       android:textColor="@color/black"
-       android:gravity="center"
+       android:text="CHECK IN"
+       android:textStyle="bold"
+       android:textColor="@color/white"
+       android:gravity="center_vertical"
        android:textSize="20sp"
        android:onClick="checkIn"
-       android:background="@drawable/bg_green_gradient"
        tools:layout_editor_absoluteY="0dp"
        tools:layout_editor_absoluteX="8dp" />
+
+   </LinearLayout>
 
 </LinearLayout>
