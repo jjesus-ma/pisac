@@ -18,7 +18,76 @@
       android:src="@mipmap/bg_drawer_header"
       />
 
+   <LinearLayout
+      android:id="@+id/avatar_container"
+      android:layout_width="210dp"
+      android:layout_height="210dp"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="100dp"
+      android:gravity="center"
+      android:background="@drawable/bg_avatar">
 
+      <ImageView
+         android:id="@+id/avatar_image"
+         android:layout_width="200dp"
+         android:layout_height="200dp"
+         android:scaleType="fitXY"
+         />
 
+   </LinearLayout>
+
+   <Button
+      android:id="@+id/sync_button"
+      android:layout_width="250dp"
+      android:layout_centerHorizontal="true"
+      android:layout_below="@+id/avatar_container"
+      style="@style/rounded_border_green_button"
+      android:text="Sincronizar datos"
+      android:layout_marginTop="40dp"
+      android:onClick="pendings"/>
+
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/sync_button"
+      android:orientation="vertical"
+      android:layout_marginTop="20dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp">
+
+      <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textColor="@color/gray"
+         android:text="Nombre Completo"/>
+
+      <TextView
+         android:drawableStart="@mipmap/ic_user"
+         android:drawablePadding="8dp"
+         android:layout_marginTop="4dp"
+         android:gravity="center_vertical"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textColor="@color/gray"
+         android:text="Raul Castañeda"/>
+
+      <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textColor="@color/gray"
+         android:layout_marginTop="12dp"
+         android:text="Puesto"/>
+
+      <TextView
+         android:drawableStart="@mipmap/ic_user"
+         android:drawablePadding="8dp"
+         android:layout_marginTop="4dp"
+         android:gravity="center_vertical"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textColor="@color/gray"
+         android:text="Verificador"/>
+
+   </LinearLayout>
 
 </RelativeLayout>

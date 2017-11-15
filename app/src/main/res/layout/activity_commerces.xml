@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="mx.gob.profeco.pisac.CommercesActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:orientation="vertical">
+    <include layout="@layout/toolbar"/>
+    <ScrollView
+       android:layout_below="@+id/toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+        <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@color/gray_light">
 
-        <include layout="@layout/toolbar"/>
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center">
+                <include layout="@layout/item_finished_commerce" />
+                <include layout="@layout/item_finished_commerce" />
+            </LinearLayout>
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center">
+                <include layout="@layout/item_finished_commerce" />
+                <include layout="@layout/item_finished_commerce" />
+            </LinearLayout>
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center">
+                <include layout="@layout/item_finished_commerce" />
+                <include layout="@layout/item_finished_commerce" />
+            </LinearLayout>
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center">
+                <include layout="@layout/item_finished_commerce" />
+                <include layout="@layout/item_finished_commerce" />
+            </LinearLayout>
 
-        <include layout="@layout/row_commerce"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"/>
-        <include layout="@layout/row_commerce"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"/>
-        <include layout="@layout/row_commerce"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"/>
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_add"
-        android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:backgroundTint="@color/red"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentEnd="true"
+       android:layout_margin="16dp"
+       android:onClick="addCommerce"
+       android:src="@mipmap/ic_plus"/>
 </RelativeLayout>

@@ -23,6 +23,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,8 +35,10 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
 
 import mx.gob.profeco.pisac.login.LoginActivity;
+import mx.gob.profeco.pisac.utils.CircleTransform;
 
 public class MapsActivity extends AppCompatActivity
         implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
@@ -63,6 +67,10 @@ public class MapsActivity extends AppCompatActivity
       SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
               .findFragmentById(R.id.map);
       mapFragment.getMapAsync(this);
+
+      View headerContainer = navigationView.getHeaderView(0); // This returns the container layout in nav_drawer_header.xml (e.g., your RelativeLayout or LinearLayout)
+      ImageView avatar = (ImageView) headerContainer.findViewById(R.id.avatar_image);
+      Picasso.with(this).load(R.mipmap.user_avatar).transform(new CircleTransform()).into(avatar);
    }
 
    @Override
@@ -168,10 +176,16 @@ public class MapsActivity extends AppCompatActivity
    }
 
    public void checkIn(View v) {
-       Log.d(TAG,"checking in");
-       Toast.makeText(this,"Check in",Toast.LENGTH_LONG).show();
 
       Intent i = new Intent(this, CommercesActivity.class);
+      i.putExtra("pending",false);
+      startActivity(i);
+   }
+
+   public void pendings(View v){
+
+      Intent i = new Intent(this, CommercesActivity.class);
+      i.putExtra("pending",true);
       startActivity(i);
    }
 }
