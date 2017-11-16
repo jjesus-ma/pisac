@@ -12,6 +12,7 @@
    <color name="transparent">#00000000</color>
 
    <color name="red">#F21945</color>
+   <color name="redAccent">#FF5248</color>
    <color name="splash_background">#2C3F3F</color>
 
 </resources>

@@ -9,10 +9,11 @@ import android.view.View;
 
 import mx.gob.profeco.pisac.MapsActivity;
 import mx.gob.profeco.pisac.R;
+import mx.gob.profeco.pisac.base.BaseActivity;
 import mx.gob.profeco.pisac.camera.QRScannerActivity;
 import mx.gob.profeco.pisac.utils.Utils;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
    private static final String TAG = "LoginActivity";
 

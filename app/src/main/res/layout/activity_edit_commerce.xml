@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_height="match_parent"
    android:layout_width="match_parent"
-   android:theme="@style/ThemeOverlay.AppCompat.Dark"
    android:orientation="vertical">
 
-   <include layout="@layout/toolbar" style="@style/ThemeOverlay.AppCompat"/>
+   <include layout="@layout/toolbar"/>
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@mipmap/bg_drawer_black"/>
    <ScrollView
       android:layout_height="match_parent"
-      android:layout_width="match_parent">
+      android:layout_width="match_parent"
+      android:layout_below="@+id/toolbar"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark">
       <LinearLayout
          android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:orientation="vertical"
-         android:background="@mipmap/bg_drawer_black">
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
 
          <LinearLayout
             android:layout_width="match_parent"
@@ -28,26 +32,47 @@
                android:layout_height="wrap_content"
                android:gravity="center"
                android:layout_weight="1">
-               <ImageView
-                  android:id="@+id/commerce_logo"
-                  android:layout_width="150dp"
-                  android:layout_height="150dp"
-                  android:layout_marginTop="8dp"
-                  android:elevation="8dp"
-                  android:layout_gravity="center_horizontal"/>
+               <RelativeLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal">
+                  <ImageView
+                     android:id="@+id/commerce_logo"
+                     android:layout_width="150dp"
+                     android:layout_height="150dp"
+                     android:layout_marginTop="8dp"
+                     android:elevation="8dp"/>
+                  <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:src="@mipmap/ic_edit_image"
+                     android:elevation="12dp"/>
+               </RelativeLayout>
+
             </LinearLayout>
             <LinearLayout
                android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:gravity="center"
                android:layout_weight="1">
-               <ImageView
-                  android:id="@+id/commerce_fachada"
-                  android:layout_width="150dp"
-                  android:layout_height="150dp"
-                  android:layout_marginTop="8dp"
-                  android:elevation="8dp"
-                  android:layout_gravity="center_horizontal"/>
+               <RelativeLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal">
+                  <ImageView
+                     android:id="@+id/commerce_fachada"
+                     android:layout_width="150dp"
+                     android:layout_height="150dp"
+                     android:layout_marginTop="8dp"
+                     android:elevation="8dp"/>
+                  <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:src="@mipmap/ic_edit_image"
+                     android:elevation="12dp"/>
+               </RelativeLayout>
             </LinearLayout>
 
       </LinearLayout>
@@ -121,7 +146,7 @@
                android:inputType="textEmailAddress"
                android:textColor="@color/white"
                android:drawablePadding="8dp"
-               android:drawableStart="@mipmap/ic_user"
+               android:drawableStart="@mipmap/ic_numer"
                android:text="382174"/>
 
             <EditText
@@ -137,7 +162,7 @@
             <Button
                android:layout_width="match_parent"
                style="@style/rounded_border_green_button"
-               android:text="Ingresar"
+               android:text="GUARDAR"
                android:layout_marginTop="20dp"
                android:onClick="save"/>
 
@@ -146,4 +171,4 @@
    </LinearLayout>
 
 </ScrollView>
-</LinearLayout>
+</RelativeLayout>

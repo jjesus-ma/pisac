@@ -14,11 +14,13 @@
            android:orientation="vertical"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
+           android:paddingBottom="12dp"
            android:background="@color/gray_light">
 
             <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:paddingEnd="8dp"
                android:gravity="center">
                 <include layout="@layout/item_finished_commerce" />
                 <include layout="@layout/item_finished_commerce" />
@@ -26,6 +28,7 @@
             <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:paddingEnd="8dp"
                android:gravity="center">
                 <include layout="@layout/item_finished_commerce" />
                 <include layout="@layout/item_finished_commerce" />
@@ -33,6 +36,7 @@
             <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:paddingEnd="8dp"
                android:gravity="center">
                 <include layout="@layout/item_finished_commerce" />
                 <include layout="@layout/item_finished_commerce" />
@@ -40,6 +44,7 @@
             <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:paddingEnd="8dp"
                android:gravity="center">
                 <include layout="@layout/item_finished_commerce" />
                 <include layout="@layout/item_finished_commerce" />

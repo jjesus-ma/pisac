@@ -9,9 +9,10 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import mx.gob.profeco.pisac.R;
+import mx.gob.profeco.pisac.base.BaseActivity;
 import mx.gob.profeco.pisac.utils.CircleTransform;
 
-public class EditCommerceActivity extends AppCompatActivity {
+public class EditCommerceActivity extends BaseActivity {
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {

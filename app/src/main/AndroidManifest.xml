@@ -39,7 +39,9 @@
          android:name=".MapsActivity"
          android:label="@string/title_activity_maps">
       </activity>
-      <activity android:name=".splash.SplashActivity">
+      <activity
+         android:name=".splash.SplashActivity"
+         android:theme="@style/launcher">
          <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
 
@@ -59,6 +61,14 @@
       <activity android:name=".Commerces.CommerceDetailActivity">
       </activity>
       <activity android:name=".Commerces.EditCommerceActivity">
+      </activity>
+      <activity android:name=".Commerces.AddCommerceActivity">
+      </activity>
+      <activity android:name=".Commerces.ReviewCommerceActivity">
+      </activity>
+      <activity android:name=".Commerces.DetailReviewActivity">
+      </activity>
+      <activity android:name=".validate.ValidateActivity">
       </activity>
    </application>
 

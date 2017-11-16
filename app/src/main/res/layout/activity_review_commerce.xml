@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/gray_light"
+              android:orientation="vertical">
+   <include layout="@layout/toolbar" />
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="2dp"
+      android:layout_marginTop="0dp">
+      <View
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:background="@color/colorPrimary" />
+      <View
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:background="@color/red" />
+   </LinearLayout>
+
+   <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="9">
+
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+
+         <!-- LIST ELEMENT -->
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bg_revision_row"
+            android:gravity="center_vertical"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="moreInfo"
+            android:padding="16dp">
+
+            <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:theme="@style/ThemeOverlay.AppCompat.Light"
+               android:text="CONDICIONES GENERALES DEL COMERCIO"/>
+
+            <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="end"
+               android:textSize="20sp"
+               android:theme="@style/ThemeOverlay.AppCompat.Light"
+               android:text=">"/>
+
+         </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/gray"/>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bg_revision_row"
+            android:gravity="center_vertical"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp">
+
+            <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="REVISIÓN DE PERMISOS"/>
+
+            <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="end"
+               android:textSize="20sp"
+               android:text=">"/>
+
+         </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/gray"/>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bg_revision_row"
+            android:gravity="center_vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp">
+
+            <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="REVISIÓN DE MERCANCÍAS"/>
+
+            <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="end"
+               android:textSize="20sp"
+               android:text=">"/>
+
+         </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/gray"/>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bg_revision_row"
+            android:gravity="center_vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp">
+
+            <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="REVISIÓN DE PRECIOS"/>
+
+            <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="end"
+               android:textSize="20sp"
+               android:text=">"/>
+
+         </LinearLayout>
+
+      </LinearLayout>
+
+
+   </ScrollView>
+
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@color/white"
+      android:elevation="8dp">
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="2px"
+         android:background="@color/gray"/>
+      <Button
+         android:layout_width="match_parent"
+         style="@style/rounded_border_green_button"
+         android:text="Finalizar Revisión"
+         android:onClick="finishReview"
+         android:layout_marginTop="16dp"
+         android:layout_marginBottom="16dp"
+         android:layout_marginLeft="16dp"
+         android:layout_marginRight="16dp"/>
+
+   </LinearLayout>
+</LinearLayout>

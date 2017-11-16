@@ -19,9 +19,10 @@ import me.dm7.barcodescanner.core.IViewFinder;
 import me.dm7.barcodescanner.core.ViewFinderView;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import mx.gob.profeco.pisac.R;
+import mx.gob.profeco.pisac.base.BaseActivity;
 import mx.gob.profeco.pisac.utils.Utils;
 
-public class QRScannerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class QRScannerActivity extends BaseActivity implements ZXingScannerView.ResultHandler {
    private final String TAG = "QRScannerActivity";
    public static final String EXTRA_QRVALUE = "qr_value";
    private ZXingScannerView mScannerView;

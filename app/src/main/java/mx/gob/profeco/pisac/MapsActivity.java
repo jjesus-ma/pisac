@@ -37,10 +37,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.squareup.picasso.Picasso;
 
+import mx.gob.profeco.pisac.base.BaseActivity;
 import mx.gob.profeco.pisac.login.LoginActivity;
 import mx.gob.profeco.pisac.utils.CircleTransform;
 
-public class MapsActivity extends AppCompatActivity
+public class MapsActivity extends BaseActivity
         implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
    private final static String TAG = "MapsActivity";

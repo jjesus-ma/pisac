@@ -7,9 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import mx.gob.profeco.pisac.Commerces.AddCommerceActivity;
 import mx.gob.profeco.pisac.Commerces.CommerceDetailActivity;
+import mx.gob.profeco.pisac.base.BaseActivity;
 
-public class CommercesActivity extends AppCompatActivity {
+public class CommercesActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class CommercesActivity extends AppCompatActivity {
 
     public void addCommerce(View v){
         Log.i("Add", "Commerce *****************");
+        Intent i = new Intent(this, AddCommerceActivity.class);
+        startActivity(i);
     }
 
     public void viewCommerce(View v){

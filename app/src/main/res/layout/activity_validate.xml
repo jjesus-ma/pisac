@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="@color/black"
+   android:gravity="center"
+   android:orientation="vertical"
+   android:theme="@style/ThemeOverlay.AppCompat.Dark"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <ImageView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:src="@mipmap/ic_ok_big"/>
+
+   <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="48dp"
+      android:text="Se ha solicitado validar tu identidad."/>
+   <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:text="Proporciona el siguiente código"/>
+   <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="al propietario del local para continuar."/>
+
+   <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:textSize="36sp"
+      android:layout_marginTop="48dp"
+      android:text="5F295"/>
+
+   <Button
+      android:layout_width="match_parent"
+      style="@style/rounded_border_red_button"
+      android:text="TERMINAR"
+      android:layout_marginTop="48dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:onClick="terminate"/>
+
+</LinearLayout>
